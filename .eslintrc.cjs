@@ -7,8 +7,8 @@ module.exports = {
     './.eslintrc-auto-import.json',
     'plugin:vue/vue3-essential',
     'eslint:recommended',
-    // '@vue/eslint-config-prettier',
-    'plugin:prettier/recommended'
+    // 'plugin:prettier/recommended',
+    '@vue/eslint-config-prettier'
   ],
   rules: {
     // 'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -230,7 +230,7 @@ module.exports = {
       }
     ],
     'space-before-blocks': [2, 'always'],
-    'space-before-function-paren': [2, 'always'],
+    // 'space-before-function-paren': [2, 'always'],
     'space-in-parens': [2, 'never'],
     'space-infix-ops': 2,
     'space-unary-ops': [
