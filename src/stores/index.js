@@ -3,4 +3,4 @@ const store = createPinia()
 export function setupStore(app) {
   app.use(store)
 }
-export { store }
+export default store
