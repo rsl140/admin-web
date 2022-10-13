@@ -1,5 +1,4 @@
 import { createApp } from 'vue'
-// import { createPinia } from 'pinia'
 import store from '@/stores/index'
 
 import 'normalize.css/normalize.css'

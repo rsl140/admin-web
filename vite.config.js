@@ -1,10 +1,3 @@
-/*
- * @LastEditors: isboyjc
- * @Description: Vite 项目配置
- * @Date: 2022-09-17 14:35:02
- * @LastEditTime: 2022-09-23 01:56:21
- * @Author: isboyjc
- */
 import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig, loadEnv } from 'vite'

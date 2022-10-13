@@ -2,6 +2,7 @@ import axios from 'axios'
 // import store from '@/store'
 import { getToken } from '@/utils/auth'
 import { ElMessage } from 'element-plus'
+import { useUserStore } from '@/stores/modules/user'
 
 // create an axios instance
 const service = axios.create({
@@ -42,23 +43,14 @@ service.interceptors.response.use(
     const res = response.data
     // if the custom code is not 20000, it is judged as an error.
     if (+res.code !== 200) {
-      if ([628, 604].indexOf(+res.code) === -1) {
-        ElMessage({
-          message: res.message || 'Error',
-          type: 'error',
-          duration: 5 * 1000
-        })
-      }
-
       if (+res.code === 403) {
-        // store.dispatch('permission/remoteRoutes')
-        // store.dispatch('user/FedLogOut')
-        // location.href = '/login'
+        useUserStore.resetToken()
+        location.reload()
         return false
       }
-      if (+res.code === 628 || +res.code === 604) {
-        return Promise.reject(res)
-      }
+      // if (+res.code === 628 || +res.code === 604) {
+      //   return Promise.reject(res)
+      // }
       return Promise.reject(new Error(res.message || 'Error'))
     } else {
       return res
